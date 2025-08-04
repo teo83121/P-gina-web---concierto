@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #03120f 0%, #6a6764 100%);
+            color: #222;
+            min-height: 100vh ;
+            display: flex ;
+            justify-content: center ;
+            align-items: center;
+        }
+
+
+        .formulario{
+            max-width:400px ;
+            background: #f4f7fa ;
+            padding: 25px 30px ;
+            border-radius: 10px ;
+        }
+
+        .formulario h2{
+            text-align: center;
+            color: #444;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .formulario label{
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .formulario input{
+            width: 100%;
+            padding: 10px 12px ;
+            margin-bottom: 18px;
+            border: 1.5px solid #ccc;
+            border-radius:6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .formulario input:focus{
+            border-color: #74ebd5 ;
+            outline: none;
+
+        }
+
+        .formulario button{
+        width: 100%;
+        padding: 12px ;
+        background: #222 ;
+        border: none ;
+        color: white;
+        font-size: 18px;
+        font-weight: 600 ;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+
+        button:hover{
+            background-color: #74ebd5  ;
+            color: #222;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="formulario">
+        <form id="registroForm">
+        <label for="name">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+
+        <label for="correo">Correo Electronico</label>
+        <input type="email" id="correo" name="correo" placeholder="Email" required>
+        
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required> >
+
+        <button type="submit">  Registrarse</button>
+        </form>
+    </div>
+
+    <script>
+    const form = document.getElementById('registroForm');
+    form.addEventListener('submit', function(event){
+        event.preventDefault();  
+
+        alert('Registro exitoso, será redireccionado a la página');
+
+        setTimeout(() => {
+            window.location.href = 'index.html';  
+        }, 1000);
+    });
+    </script>
+</body>
+</html>
