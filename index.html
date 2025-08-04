@@ -1,339 +1,111 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Página Web - Concierto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #03120f 0%, #6a6764 100%);
+            color: #222;
+            min-height: 100vh ;
+            display: flex ;
+            justify-content: center ;
+            align-items: center;
+        }
 
 
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-  />
+        .formulario{
+            max-width:400px ;
+            background: #f4f7fa ;
+            padding: 25px 30px ;
+            border-radius: 10px ;
+        }
 
-  <style>
+        .formulario h2{
+            text-align: center;
+            color: #444;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        .formulario label{
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #555;
+        }
 
-    html,body {
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #747070f1 0%, #444 100%);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-    }
-    
-    .gradient-text{
-        background: linear-gradient(125deg, #0a3cf1 20%, #0ad4db 80%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent
-    }
-    main {
-    max-width:1400px ;
-    width: 100%;
-    }
+        .formulario input{
+            width: 100%;
+            padding: 10px 12px ;
+            margin-bottom: 18px;
+            border: 1.5px solid #ccc;
+            border-radius:6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
 
-    nav.navvar {
-      margin-bottom: 30px;
-      text-align: center;
-    }
+        .formulario input:focus{
+            border-color: #74ebd5 ;
+            outline: none;
 
-    nav.navvar a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 1rem;
-    }
+        }
 
-    nav.navvar a:hover {
-      color: #ffd700;
-      text-decoration: underline;
-    }
+        .formulario button{
+        width: 100%;
+        padding: 12px ;
+        background: #222 ;
+        border: none ;
+        color: white;
+        font-size: 18px;
+        font-weight: 600 ;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
 
-    .caja-principal h1 {
-      text-align: center;
-      font-size: 50px;
-      color: #ffd700;
-      margin-bottom: 40px;
-    }
+        button:hover{
+            background-color: #74ebd5  ;
+            color: #222;
 
-    section {
-      text-align: center;
-      background-color: #555;
-      border-radius: 10px;
-      padding: 30px 20px;
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #ffd700;
-      font-size: 1.8rem;
-    }
-
-    p, h3 {
-      margin-bottom: 15px;
-      font-size: 25px;
-      line-height: 1;
-    }
-
-
-    .swiper {
-      width: 100%;
-      height: 1000px;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .swiper-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: #fff;
-    }
-
-    .swiper-pagination-bullet {
-      background-color: #fff;
-    }
-
-    iframe {
-      width: 100%;
-      height: 700px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 15px;
-    }
-
-    .links-redes {
-    display: flex;
-    flex-direction:row; 
-    align-items: center; 
-    gap: 15px;
-    padding: 20px 0;
-    }
-
-    .links-redes h2 {
-    align-self: flex-start;
-    margin-left: 20px;
-    margin-right: 300px;
-    white-space: nowrap;
-    }
-
-    .links-redes a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0;
-    padding: 10px 15px;
-    }
-
-
-    .links-redes a:hover {
-      background-color: #555;
-    }
-
-
-    form#boleteria-form {
-      max-width: 400px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    form#boleteria-form label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    form#boleteria-form input[type="number"] {
-      width: 100%;
-      padding: 8px;
-      font-size: 1rem;
-      border-radius: 5px;
-      border: none;
-      margin-bottom: 20px;
-    }
-
-    form#boleteria-form button {
-      width: 100%;
-      padding: 12px;
-      background-color: #ffd700;
-      color: #111;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    form#boleteria-form button:hover {
-      background-color: #e6c200;
-    }
-
-    #mensaje-compra {
-      margin-top: 15px;
-      font-weight: bold;
-      color: #90ee90; 
-      text-align: center;
-    }
-
-   
-    @media (max-width: 600px) {
-      .caja-principal h1 {
-        font-size: 1.8rem;
-      }
-
-      h2 {
-        font-size: 1.4rem;
-      }
-
-      iframe {
-        height: 250px;
-      }
-
-    }
-  </style>
+        }
+    </style>
 </head>
 <body>
+    <div class="formulario">
+        <form id="registroForm">
+        <label for="name">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
 
-  <main>
-    <nav class="navvar">
-      <a href="#inicio">Inicio</a>
-      <a href="#informacion">Información del Evento</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a href="#boleteria">Boletería</a>
-      <a href="#redes">Redes Sociales</a>
-    </nav>
+        <label for="correo">Correo Electronico</label>
+        <input type="email" id="correo" name="correo" placeholder="Email" required>
+        
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required> >
 
-    <div class="caja-principal" id="inicio">
-      <h1 class="gradient-text">Bienvenido al Concierto de La Maravilla</h1>
+        <button type="submit">  Registrarse</button>
+        </form>
     </div>
 
-    <section id="informacion">
-      <h2 class="gradient-text">INFORMACIÓN DEL EVENTO</h2>
-      <p><strong>Este 12 de octubre seran testigos de otra evolucion musical, arcangel vuelve al trono que siempre le correspodio</strong></p>
-      <p><strong>Fecha:</strong> 12 de octubre</p>
-      <p><strong>Hora:</strong> 8:00 PM</p>
-      <h3>Este evento va a ser una experiencia inolvidable.</h3>
-    </section>
+    <script>
+    const form = document.getElementById('registroForm');
+    form.addEventListener('submit', function(event){
+        event.preventDefault();  
 
-    <section>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="multimedia/img1.png" alt="Imagen de Arcangel"/>
-          </div>
-          <div class="swiper-slide">
-            <img src="multimedia/img2.jpg" alt="Flyer del evento"/>
-          </div>
-          <div class="swiper-slide">
-            <img src="multimedia/img3.jpg" alt="Imagen promocional"/>
-          </div>
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </section>
+        alert('Registro exitoso, será redireccionado a la página');
 
-    <section>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/XJ3Z2ke0FMk?si=l93owBiYpAiQhmPS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </section>
-
-    <section id="ubicacion">
-      <h2 class="gradient-text">Ubicación del Evento</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!3m2!1ses!2sco!4v1754314776376!5m2!1ses!2sco!6m8!1m7!1s75hOb-daKWmtWlbPr50YRg!2m2!1d6.383343434514641!2d-75.47860225301126!3f115.57854053945123!4f-2.7250023778325954!5f0.47687447018037504" 
-   
-        width="100%" 
-        height="400" 
-        style="border:0; border-radius:10px;" 
-        allowfullscreen 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-    </section>
-</iframe>
-<hr>
- 
-    <section id="boleteria">
-      <h2 class="gradient-text">Boletería</h2>
-      <form id="boleteria-form">
-        <label for="cantidad">Cantidad de boletos:</label>
-        <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1" required />
-        <button type="submit">Comprar</button>
-      </form>
-      <div id="mensaje-compra"></div>
-    </section>
-    <hr>
-    <section class="links-redes" id="redes">
-      <h2 class="gradient-text">Redes Sociales</h2> <br>
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" ><img src="multimedia/imginstagram.png" alt="Logo instagram" width="100px" height="100px"></a>
-      <a href="https://web.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="multimedia/imgfacebook.png" alt="Logo facebook" width="100px" height="100px"> </a>
-      </section>
-   
-    <div class="nameswork">
-        <hr>
-        <h1><strong>HECHO POR:</strong></h1>
-        <br>
-        <h3>Alejandro Murillo Zapata</h3>
-        <br>
-        <h3>Mateo Giraldo Marquez</h3>
-
-    </div>
-  </main>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+        setTimeout(() => {
+            window.location.href = 'index.html';  
+        }, 1000);
     });
-
-
-    const form = document.getElementById('boleteria-form');
-    const mensaje = document.getElementById('mensaje-compra');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const cantidad = parseInt(form.cantidad.value, 10);
-
-      if (cantidad && cantidad > 0) {
-        mensaje.textContent = `¡Gracias por comprar ${cantidad} boleto${cantidad > 1 ? 's' : ''}! Nos pondremos en contacto contigo pronto.`;
-        form.reset();
-      } else {
-        mensaje.textContent = 'Por favor, ingresa una cantidad válida.';
-      }
-    });
-  </script>
-
+    </script>
 </body>
 </html>
